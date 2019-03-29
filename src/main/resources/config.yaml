@@ -1,0 +1,14 @@
+kumuluzee:
+  env:
+    name: dev
+  metrics:
+    web-instrumentation:
+      - name: testEndpoint
+        url-pattern: data/*
+  jwt-auth:
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsEcyV6ImvMFAo0SNQIdMN01ZokALnOIMtSzx+6CWFAydmfNDtqsF+BPEw0X06dw5r4SHvXQBrGKRV9fYGQnp6/cOhyW3Npl6xmDDj2XCsunts+0RydnfjX6odGPzqnX0EK8LuWdo8uueeB0LXVXMSPTev4j8WBnrq8zL51wsjibngOWlHH0kzagjDHDd/Yh2DYOubCMPZXC7Da/l+SEQxWTmNvk4DP7vdYO1sQTwU2q9SuzgSE1OKQyaZcuZyrmF6ehpJcuva9FAhy9iqQ+pDE4XlCXQWIWZCc59RwG136g4faxyKfWTbrMjyii2fX463LPdGt/WfLyl2wQbdMB7+wIDAQAB
+    issuer: http://localhost:9080/auth/realms/MicroProfile
+injected:
+  value: Injected value
+  value: lookup value
+

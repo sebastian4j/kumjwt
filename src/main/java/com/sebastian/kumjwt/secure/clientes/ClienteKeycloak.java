@@ -24,18 +24,16 @@ public final class ClienteKeycloak {
   public static String obtenerToken(final String usuario, final String clave) {
     String token;
     try {
-      final URLConnection con
-              = new URL(System.getenv("url_keycloak"))
-                      .openConnection();
+      final URLConnection con = new URL(System.getenv("url_keycloak")).openConnection();
       con.setDoOutput(true);
       try (final PrintWriter ps = new PrintWriter(con.getOutputStream())) {
         ps.write(new StringBuilder().append("grant_type=password&client_id=cliente-mp&username=")
-                .append(usuario).append("&password=").append(clave).toString());
+            .append(usuario).append("&password=").append(clave).toString());
       }
-      String result = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
-              .collect(Collectors.joining(""));
+      final String result = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
+          .collect(Collectors.joining(""));
       token = result.split(":")[1].split("\",\"")[0].substring(1);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new IllegalStateException("error al obtener token", e);
     }
     return token;

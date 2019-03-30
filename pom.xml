@@ -74,7 +74,7 @@
                     <environmentVariables>
                         <url_keycloak>http://localhost:9080/auth/realms/MicroProfile/protocol/openid-connect/token</url_keycloak>
                         <usuario_keycloak>sebastian</usuario_keycloak>
-                        <clave_keycloak>elias</clave_keycloak>
+                        <clave_keycloak>clave</clave_keycloak>
                     </environmentVariables>
                 </configuration>
             </plugin>

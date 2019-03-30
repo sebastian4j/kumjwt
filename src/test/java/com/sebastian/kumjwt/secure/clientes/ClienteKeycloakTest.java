@@ -1,6 +1,6 @@
 package com.sebastian.kumjwt.secure.clientes;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
 
 /**
@@ -13,7 +13,7 @@ public class ClienteKeycloakTest {
 
   @Test
   public void tokenObtenidoConDatosCorrectos() {
-    assertThat(ClienteKeycloak.obtenerToken(System.getenv("usuario_keycloak"), System.getenv("clave_keycloak"))).isNotNull()
-            .isNotEmpty();
+    assertThat(ClienteKeycloak.obtenerToken(System.getenv("usuario_keycloak"),
+        System.getenv("clave_keycloak"))).isNotNull().isNotEmpty();
   }
 }
